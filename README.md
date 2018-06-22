@@ -4,13 +4,21 @@ This is my first Golang program. It's the repl of a tiny concatenative esolang I
 
 ## Overview
 
+### Family
+
 The language is stack-based, but **it reads backwards**. When you type a command, you begin with the bottom of the program stack and you end with the top of the stack: `foo dup bar` will first push `bar` on the data stack, then `dup` it, then push `foo` on it.
 
-The only data type is strings, the language doesn't even know about numbers or booleans. For booleans, the string "1" means true, and anything else means false. For numbers, we can use the length of words to simulate values, like `|||` means 3. Well, since you can do a lot with the Thue programming language, I guess you can do a lot with this one (we have a "find and replace" function).
+### Data types
+
+The only data type is strings, the language doesn't even know about numbers or booleans. For booleans, the string "1" means true, and anything else means false. For numbers, we can use the length of words to simulate values, like `|||` means 3. Well, since you can do a lot with the programming language [Thue](http://esolangs.org/wiki/Thue), I guess you can do a lot with this one too (we have a "find and replace" function). 
+
+### Grouping
 
 Many concatenative languages use brackets or parentheses to group things and nest them. There's no grouping in first.go, but the underscore characters are always automatically replaced by space characters, which allows easier function definitions. Nesting is byebye though.
 
 ## Example session
+
+Let's assign a value to a variable, output the variable's value, define an increment and a decrement function, increment variable's value, and output the variable's value again.
 
 ```
   dataStack []
@@ -81,10 +89,9 @@ foo is ||||
 >
 ```
 
-
 ## Vocabulary
 
-Here's the list of available verbs. **All of them pop their arguments, unless stated otherwise**.
+Here's the list of available verbs. **Verbs all pop their arguments, unless stated otherwise**.
 
 ### `pop`, `dup`, `pick`
 The `pop` operator removes the top element. The `dup` operator pushes a duplicate on top, so it replaces the one original by two copies. The `pick` operator pops the top element, and using its length N: it pushes a copy of the Nth element on top of the stack.
