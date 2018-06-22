@@ -2,6 +2,10 @@
 
 This is my first Golang program. It's the REPL of a tiny concatenative esolang I created to get used to Go.
 
+## Download
+
+A compiled windows executable is available [here](http://thinkbots.are.free/).
+
 ## Overview
 
 ### Family
