@@ -136,8 +136,8 @@ The `def` operator pops the name of a function, pops the body of a function, and
 ### `if`, `ife`, `and`, `or`, `not`
 The `if` operator applies the `do` operator to the second element if the top element is 1.
 The `ife` operator applies the `do` operator to the second element if the top element is 1, or applies the `do` operator to the third element otherwise.
-The `and` operator pushes 1 on the stack if the two first elements are 1.
-The `or` operator pushes 1 on the stack if one of the tow first elements are 1.
+The `and` operator pushes 1 on the stack if the first two elements are 1.
+The `or` operator pushes 1 on the stack if one of the first two elements are 1.
 The `not` operator pushes 1 on the stack if the top element isn't 1.
 
 ### `equals`, `contains`, `prefix`, `suffix`
