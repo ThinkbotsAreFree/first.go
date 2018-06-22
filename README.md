@@ -6,7 +6,7 @@ This is my first Golang program. It's the repl of a tiny concatenative esolang I
 
 ### Family
 
-The language is stack-based, but **it reads backwards**. When you type a command, you begin with the bottom of the program stack and you end with the top of the stack: `foo dup bar` will first push `bar` on the data stack, then `dup` it, then push `foo` on it.
+The language is stack-based concatenative, but **it reads backwards**. When you type a command, you begin with the bottom of the program stack and you end with the top of the stack: `foo dup bar` will first push `bar` on the data stack, then `dup` it, then push `foo` on it.
 
 ### Data types
 
