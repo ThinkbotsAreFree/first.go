@@ -4,7 +4,7 @@ This is my first Golang program. It's the REPL of a tiny concatenative esolang I
 
 ## Download
 
-A compiled windows executable is available [here](http://thinkbots.are.free/).
+A compiled windows executable is available [here](http://thinkbots.are.free.fr/).
 
 ## Overview
 
