@@ -100,7 +100,7 @@ The `pop` operator removes the top element. The `dup` operator pushes a duplicat
 The `swap` operator interchanges the top two elements. The `popd` operator removes the second element. The `popop` operator removes the first and the second element. The `dupd` operator duplicates the second element.
 
 ### `swapd`, `rollup`, `rolldown`
-The `swapd` operator interchanges the second and third elements but leaves the first element in place. The `rollup` operator moves the third and second element into second and third position and moves the first element into third position. The `rolldown` operator moves the second and first element into third and second position and moves the third element into first position.
+The `swapd` operator interchanges the second and third elements but leaves the first element in place. The `rollup` operator moves the third and second element into second and first position and moves the first element into third position. The `rolldown` operator moves the second and first element into third and second position and moves the third element into first position.
 
 ### `choice`
 The `choice` operator expects three values on top of the stack, say X, Y and Z, with Z on top. The third value from the top, X, has to be a truth value. If it is true, then the choice operator just leaves Y on top of the stack, and X and Z disappear. On the other hand, if X is false, then the choice operator just leaves Z on top of the stack, and X and Y disappear.
