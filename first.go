@@ -6,28 +6,31 @@ import (
 	"github.com/fatih/color"
 	"os"
 	"strings"
+	"flag"
 )
 
 func main() {
 
 	var (
 		dataStack []string
-		progStack []string
+		progStack []string		
 	)
 	variable := make(map[string]string)
 	function := make(map[string]string)
 
+	tron := flag.Bool("tron", false, "trace on")
+	flag.Parse()
+
 	reader := bufio.NewReader(os.Stdin)
 
 	white := color.New(color.FgWhite)
+	magenta := color.New(color.FgMagenta).Add(color.Underline)
 
 	ask := func(prompt string) string {
 
 		white.Print(prompt)
-		white.DisableColor()
 		text, _ := reader.ReadString('\n')
 		text = strings.Replace(text, "\r\n", "", 1)
-		white.EnableColor()
 		return (text)
 	}
 
@@ -323,6 +326,7 @@ func main() {
 
 	}
 
+
 	interpret := func(command string) {
 
 		tokens := strings.Split(command, " ")
@@ -331,33 +335,26 @@ func main() {
 			push(&progStack, token)
 		}
 
-		c := color.New(color.FgMagenta).Add(color.Underline)
-
 		for len(progStack) > 0 {
-			c.Print("  dataStack", dataStack)
-			fmt.Println(" " + progStack[len(progStack)-1])
+			if (*tron) {
+				magenta.Print("  dataStack", dataStack)
+				fmt.Println(" " + progStack[len(progStack)-1])
+			}
 			execute(progStack[len(progStack)-1])
 		}
 	}
 
 	text := ""
-
-	c := color.New(color.FgMagenta).Add(color.Underline)
-
 	for text != "end" {
 
-		c.Println("  dataStack", dataStack)
-		c.Println("  functions", function)
-		c.Println("  variables", variable)
+		if (*tron) {
+			magenta.Println("  dataStack", dataStack)
+			magenta.Println("  functions", function)
+			magenta.Println("  variables", variable)
+		}
 		text = ask("\n> ")
 		interpret(text)
 
 	}
 
 }
-
-// def +=| replace_rolldown_|_||
-// def incr set_swap_+=|_get_dup
-
-// def incr set_swap_replace_rolldown_|_||_get_dup
-// def decr set_swap_replace_rolldown_||_|_get_dup
