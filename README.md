@@ -116,7 +116,7 @@ The `choice` operator expects three values on top of the stack, say X, Y and Z, 
 
 ### `output`, `input`
 The `output` operator prints the top element to stdout.
-The `input` operator reads an element from stdin, and pushes it on top.
+The `input` operator prints the top element to stdout, and then reads an element from stdin, and pushes it on top.
 
 ### `cons`, `uncons`, `append`, `remove`, `replace`, `removeall`, `replaceall`
 The `cons` operator concatenates the two top values into one space-separated value.
