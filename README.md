@@ -1,6 +1,6 @@
 # first.go
 
-This is my first Golang program. It's the repl of a tiny concatenative esolang I created to get used to Go.
+This is my first Golang program. It's the REPL of a tiny concatenative esolang I created to get used to Go.
 
 ## Overview
 
